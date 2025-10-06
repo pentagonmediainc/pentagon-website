@@ -50,9 +50,9 @@
     </script>
 
     <style>
-      /* Center the banner logo on phones */
+      /* Responsive logo centering and sizing */
       @media screen and (max-width: 736px) {
-        /* Make the image container center its content */
+        /* Center the image container */
         .panel.banner .image.filtered {
           display: flex !important;
           justify-content: center !important;
@@ -61,16 +61,32 @@
           margin: 0 auto !important;
           width: 100% !important;
         }
-        /* Size & center the logo image itself */
+
+        /* Larger responsive logo for phones */
         .panel.banner .image.filtered .logo-img {
           display: block;
-          max-width: 160px;   /* adjust if you want bigger/smaller */
+          width: 100%;
+          max-width: clamp(260px, 70vw, 460px); /* Larger and scalable */
           height: auto;
           margin: 0 auto;
         }
-        /* Optional: center hero copy & CTA for a clean stacked layout */
-        .panel.banner.right .content { text-align: center; }
-        .panel.banner.right .actions { display: flex; justify-content: center; }
+
+        /* Center hero text and button */
+        .panel.banner.right .content {
+          text-align: center;
+        }
+
+        .panel.banner.right .actions {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      /* Adjust logo size for tablets */
+      @media screen and (min-width: 737px) and (max-width: 980px) {
+        .panel.banner .image.filtered .logo-img {
+          max-width: clamp(300px, 45vw, 520px);
+        }
       }
     </style>
   </head>
@@ -78,7 +94,6 @@
   <body class="is-preload">
     <!-- Page Wrapper -->
     <div id="page-wrapper">
-      <!-- Wrapper -->
       <div id="wrapper">
 
         <!-- Panel (Banner) -->
@@ -129,12 +144,12 @@
           </div>
           <div class="inner">
             <ul class="grid-icons three connected">
-              <li><span class="icon fa-gem"><span class="label">Lorem</span></span></li>
-              <li><span class="icon solid fa-camera-retro"><span class="label">Ipsum</span></span></li>
-              <li><span class="icon solid fa-cog"><span class="label">Dolor</span></span></li>
-              <li><span class="icon solid fa-paper-plane"><span class="label">Sit</span></span></li>
-              <li><span class="icon solid fa-chart-bar"><span class="label">Amet</span></span></li>
-              <li><span class="icon solid fa-code"><span class="label">Nullam</span></span></li>
+              <li><span class="icon fa-gem"></span></li>
+              <li><span class="icon solid fa-camera-retro"></span></li>
+              <li><span class="icon solid fa-cog"></span></li>
+              <li><span class="icon solid fa-paper-plane"></span></li>
+              <li><span class="icon solid fa-chart-bar"></span></li>
+              <li><span class="icon solid fa-code"></span></li>
             </ul>
           </div>
         </section>
@@ -183,7 +198,7 @@
           </div>
         </section>
 
-        <!-- Panel -->
+        <!-- Contact Section -->
         <section class="panel color4-alt">
           <div class="intro color4">
             <h2 class="major">Contact</h2>
@@ -225,7 +240,7 @@
           </div>
         </section>
 
-        <!-- Panel -->
+        <!-- Footer -->
         <section class="panel color0-alt">
           <div class="intro color0">
             <div class="copyright">© 2025 Pentagon Media Inc.</div>
